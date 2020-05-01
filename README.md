@@ -6,8 +6,8 @@ A fork of vale981's repo to allow building bcachefs with the latest stable kerne
 The scripts in this repo can be used to obtain an `Arch Linux`
 live/install/rescue ISO. This is realized through
 [Archiso](https://wiki.archlinux.org/index.php/Archiso) with some
-hacks to make it use the `linux-bcachefs-git` [from the
-AUR](https://aur.archlinux.org/packages/linux-bcachefs-git/).
+hacks to make it use the `linux-mainline-bcachefs` [from the
+AUR](https://aur.archlinux.org/packages/linux-mainline-bcachefs/).
 
 The whole thing is currently in a *works for me* kind of state.
 
