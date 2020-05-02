@@ -9,7 +9,7 @@
 pkgbase=linux-mainline-bcachefs               # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
 _tag=v5.6
-pkgver=5.6.8
+pkgver=5.6.3
 pkgrel=1
 pkgdesc="Linux Mainline"
 arch=(x86_64)
