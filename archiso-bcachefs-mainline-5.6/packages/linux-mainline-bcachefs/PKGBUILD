@@ -18,7 +18,7 @@ license=(GPL2)
 makedepends=(
   bc kmod libelf
   xmlto python-sphinx python-sphinx_rtd_theme graphviz imagemagick
-  git inetutils
+  git inetutils bcachefs-tools-git
 )
 options=('!strip')
 
