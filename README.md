@@ -1,5 +1,5 @@
 # archiso-bcachefs-mainline
-A fork of [vale981](https://github.com/vale981/archiso-bcachefs)'s repo to allow building bcachefs with the current stable kernel, with kernel optimizations from [nicman23](https://github.com/nicman23/bcachefs)'s PKGBUILD and bcachefs fixes by [eadwu](https://github.com/koverstreet/bcachefs/issues/54#issuecomment-578324042). Here is the readme by vale981, modified for this repo:
+A fork of [vale981](https://github.com/vale981/archiso-bcachefs)'s repo to allow building bcachefs with a current stable kernel, with kernel optimizations from [nicman23](https://github.com/nicman23/bcachefs)'s PKGBUILD and bcachefs fixes by [eadwu](https://github.com/koverstreet/bcachefs/issues/54#issuecomment-578324042). Here is the readme by vale981, modified for this repo:
 
 # Archlinux Live with Bcachefs
 
