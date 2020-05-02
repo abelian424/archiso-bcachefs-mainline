@@ -10,29 +10,3 @@ index 6f1afa4a3119..5ece98fe7d01 100644
  #include <keys/user-type.h>
  
  static u64 bch2_checksum_init(unsigned type)
-diff --git a/fs/bcachefs/journal.h b/fs/bcachefs/journal.h
-index ec61137df00a..f0da2c52581c 100644
---- a/fs/bcachefs/journal.h
-+++ b/fs/bcachefs/journal.h
-@@ -269,7 +269,7 @@ static inline void bch2_journal_res_put(struct journal *j,
- 	if (!res->ref)
- 		return;
- 
--	lock_release(&j->res_map, 0, _THIS_IP_);
-+	lock_release(&j->res_map, _THIS_IP_);
- 
- 	while (res->u64s)
- 		bch2_journal_add_entry(j, res,
-diff --git a/kernel/locking/six.c b/kernel/locking/six.c
-index 9fa58b6fadc9..c778123505d0 100644
---- a/kernel/locking/six.c
-+++ b/kernel/locking/six.c
-@@ -15,7 +15,7 @@
- #endif
- 
- #define six_acquire(l, t)	lock_acquire(l, 0, t, 0, 0, NULL, _RET_IP_)
--#define six_release(l)		lock_release(l, 0, _RET_IP_)
-+#define six_release(l)		lock_release(l, _RET_IP_)
- 
- struct six_lock_vals {
- 	/* Value we add to the lock in order to take the lock: */
