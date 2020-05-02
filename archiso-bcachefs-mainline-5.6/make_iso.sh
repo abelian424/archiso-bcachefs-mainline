@@ -33,7 +33,7 @@ sed -i 's/vmlinuz-linux/vmlinuz-linux-mainline-bcachefs/' $WORKDIR/build.sh
 
 echo "Adding Packages"
 cat >> $WORKDIR/packages.x86_64 <<EOF
-libscrypt-git
+libscrypt
 bcachefs-tools-git
 linux-mainline-bcachefs
 linux-mainline-bcachefs-headers
@@ -96,7 +96,7 @@ function add_aur {
     shopt -u nullglob
 }
 
-add_aur https://aur.archlinux.org/libscrypt-git.git true
+add_aur https://aur.archlinux.org/libscrypt.git true
 add_aur https://aur.archlinux.org/bcachefs-tools-git.git
 add_aur https://aur.archlinux.org/linux-mainline-bcachefs.git
 
