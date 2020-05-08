@@ -24,6 +24,7 @@ makedepends=(
     valgrind
     zlib
     cargo
+    clang
 )
 depends=(
     libaio
