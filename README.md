@@ -1,5 +1,5 @@
 # archiso-bcachefs-mainline
-A version of [vale981](https://github.com/vale981/archiso-bcachefs)'s repo to allow building bcachefs with a current stable kernel, with kernel optimizations from [nicman23](https://github.com/nicman23/bcachefs)'s PKGBUILD and bcachefs fixes by [eadwu](https://github.com/koverstreet/bcachefs/issues/54#issuecomment-578324042). I've also added a version with [ckoliva](https://github.com/ckolivas)'s MuQSS patches, the same as the linux-ck kernel. Here is the readme by vale981, modified for this repo:
+A version of [vale981](https://github.com/vale981/archiso-bcachefs)'s repo to allow building bcachefs with a current stable kernel, with kernel optimizations from [nicman23](https://github.com/nicman23/bcachefs)'s PKGBUILD and bcachefs fixes by [eadwu](https://github.com/koverstreet/bcachefs/issues/54#issuecomment-578324042). I've also added a version with [ckoliva](https://github.com/ckolivas)'s MuQSS patches, the same as the linux-ck kernel. I recommend you go into the packages directory and build the packages before running make_iso.sh Here is the readme by vale981, modified for this repo:
 
 # Archlinux Live with Bcachefs
 
