@@ -74,7 +74,7 @@ makedepends=(
 options=('!strip')
 
 _reponame="bcachefs"
-_repo_url="https://github.com/eadwu/$_reponame"
+_repo_url="https://github.com/koverstreet/$_reponame"
 
 _ckpatch="patch-5.6-ck${_ckpatchversion}"
 _gcc_more_v='20191217'
