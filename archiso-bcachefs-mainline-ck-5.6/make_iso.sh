@@ -35,8 +35,8 @@ echo "Adding Packages"
 cat >> $WORKDIR/packages.x86_64 <<EOF
 libscrypt
 bcachefs-tools-git
-linux-mainline-bcachefs-ck
-linux-mainline-bcachefs-ck-headers
+linux-bcachefs-ck
+linux-bcachefs-ck-headers
 EOF
 
 echo "Setting up pacman.conf"
@@ -98,7 +98,7 @@ function add_aur {
 
 add_aur https://aur.archlinux.org/libscrypt.git true
 add_aur https://aur.archlinux.org/bcachefs-tools-git.git
-add_aur https://aur.archlinux.org/linux-mainline-bcachefs.git
+add_aur https://aur.archlinux.org/linux-bcachefs-ck.git
 
 
 printf "\nBuilding the ISO\n"
