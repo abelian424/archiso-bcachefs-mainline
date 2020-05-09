@@ -26,7 +26,7 @@ I recommend that you at least skim the scripts in this repo to understand what i
    <!-- * or set the `KERNEL_ARCH` variable in the `make_iso.sh` script -->
  * run `./make_iso.sh` and get a cup of whatever hot beverage you favor
 
-## Installing Arch Linux on Bchachefs
+## Installing Arch Linux on Bcachefs
 
 Just boot the resulting ISO and follow the installation as usual.
 There are (at least) two (trivial) points to be considered however:
