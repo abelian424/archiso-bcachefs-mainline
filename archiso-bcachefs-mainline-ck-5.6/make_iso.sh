@@ -29,7 +29,7 @@ sudo rm -rf $WORKDIR
 cp -r /usr/share/archiso/configs/releng/ $WORKDIR
 
 echo "Patching build.sh"
-sed -i 's/vmlinuz-linux/vmlinuz-linux-mainline-bcachefs-ck/' $WORKDIR/build.sh
+sed -i 's/vmlinuz-linux/vmlinuz-linux-bcachefs-ck/' $WORKDIR/build.sh
 
 echo "Adding Packages"
 cat >> $WORKDIR/packages.x86_64 <<EOF
@@ -57,9 +57,9 @@ sudo repo-add $REPO
 printf "\nBuilding AUR Packages\n"
 echo "====================="
 
-# git clone linux-mainline-bcachefs
+# git clone linux-bcachefs-ck
 # git clone https://aur.archlinux.org/bcachefs-tools-git.git
-# git clone https://aur.archlinux.org/linux-mainline-bcachefs.git
+# git clone https://aur.archlinux.org/linux-bcachefs-ck.git
 
 function add_aur {
     CURRDIR=$(pwd)
