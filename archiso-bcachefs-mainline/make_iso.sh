@@ -27,10 +27,6 @@ echo "============"
 echo "Removing $WORKDIR"
 sudo rm -rf $WORKDIR
 cp -r /usr/share/archiso/configs/releng/ $WORKDIR
-
-echo "Patching build.sh"
-sed -i 's/vmlinuz-linux/vmlinuz-linux-mainline-bcachefs/' $WORKDIR/build.sh
-
 echo "Adding Packages"
 cat >> $WORKDIR/packages.x86_64 <<EOF
 libscrypt
@@ -38,6 +34,8 @@ bcachefs-tools-git
 linux-mainline-bcachefs
 linux-mainline-bcachefs-headers
 EOF
+
+#sed -e 's/mkinitcpio//g' $WORKDIR/packages.x86_64
 
 echo "Setting up pacman.conf"
 cat >> $WORKDIR/pacman.conf <<EOF
@@ -100,7 +98,6 @@ add_aur https://aur.archlinux.org/libscrypt.git true
 add_aur https://aur.archlinux.org/bcachefs-tools-git.git
 add_aur https://aur.archlinux.org/linux-mainline-bcachefs.git
 
-
 printf "\nBuilding the ISO\n"
 echo "====================="
 
@@ -108,4 +105,5 @@ sudo mkdir -p $WORKDIR/airootfs/$REPO_BASE
 sudo cp -r $REPO_DIR $WORKDIR/airootfs/$REPO_BASE
 
 cd $WORKDIR
-sudo ./build.sh -v -N $ISO_NAME -P $ISO_PUBLISHER
+
+sudo mkarchiso -v -w $WORKDIR/work -o $WORKDIR/out $WORKDIR
