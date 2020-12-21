@@ -27,10 +27,9 @@ echo "============"
 echo "Removing $WORKDIR"
 sudo rm -rf $WORKDIR
 cp -r /usr/share/archiso/configs/releng/ $WORKDIR
-
-echo "Patching build.sh"
-sed -i 's/vmlinuz-linux/vmlinuz-linux-bcachefs-ck/' $WORKDIR/build.sh
-
+#cp $WORKDIR/airootfs/etc/mkinitcpio.d/linux.preset $WORKDIR/airootfs/etc/mkinitcpio.d/linux-bcachefs-ck.preset
+#sed -i 's/vmlinuz-linux/vmlinuz-linux-bcachefs-ck/' $WORKDIR/airootfs/etc/mkinitcpio.d/linux-bcachefs-ck.preset
+#sed -i 's/initramfs-linux.img/initramfs-linux-bcachefs-ck.img/' $WORKDIR/airootfs/etc/mkinitcpio.d/linux-bcachefs-ck.preset
 echo "Adding Packages"
 cat >> $WORKDIR/packages.x86_64 <<EOF
 libscrypt
@@ -38,6 +37,8 @@ bcachefs-tools-git
 linux-bcachefs-ck
 linux-bcachefs-ck-headers
 EOF
+
+#sed -e 's/mkinitcpio//g' $WORKDIR/packages.x86_64
 
 echo "Setting up pacman.conf"
 cat >> $WORKDIR/pacman.conf <<EOF
@@ -99,7 +100,7 @@ function add_aur {
 add_aur https://aur.archlinux.org/libscrypt.git true
 add_aur https://aur.archlinux.org/bcachefs-tools-git.git
 add_aur https://aur.archlinux.org/linux-bcachefs-ck.git
-
+#add_aur https://aur.archlinux.org/dracut-hook.git
 
 printf "\nBuilding the ISO\n"
 echo "====================="
@@ -108,4 +109,6 @@ sudo mkdir -p $WORKDIR/airootfs/$REPO_BASE
 sudo cp -r $REPO_DIR $WORKDIR/airootfs/$REPO_BASE
 
 cd $WORKDIR
-sudo ./build.sh -v -N $ISO_NAME -P $ISO_PUBLISHER
+
+#sudo mkarchiso -v -L $ISO_NAME -P $ISO_PUBLISHER -w $WORKDIR/work -o $WORKDIR/out $WORKDIR
+sudo mkarchiso -v -w $WORKDIR/work -o $WORKDIR/out $WORKDIR
