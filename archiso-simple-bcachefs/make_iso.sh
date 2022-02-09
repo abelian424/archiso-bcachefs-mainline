@@ -30,9 +30,9 @@ cp -r /usr/share/archiso/configs/releng/ $WORKDIR
 echo "Adding Packages"
 cat >> $WORKDIR/packages.x86_64 <<EOF
 libscrypt
-bcachefs-tools-git
-linux-bcachefs-git
-linux-bcachefs-git-headers
+simple-bcachefs-tools-git
+linux-simple-bcachefs-git
+linux-simple-bcachefs-git-headers
 EOF
 
 #sed -e 's/mkinitcpio//g' $WORKDIR/packages.x86_64
@@ -95,8 +95,8 @@ function add_aur {
 }
 
 add_aur https://aur.archlinux.org/libscrypt.git true
-add_aur https://aur.archlinux.org/bcachefs-tools-git.git
-add_aur https://aur.archlinux.org/linux-bcachefs-git.git
+add_aur https://aur.archlinux.org/simple-bcachefs-tools-git.git
+add_aur https://aur.archlinux.org/linux-simple-bcachefs-git.git
 
 printf "\nBuilding the ISO\n"
 echo "====================="
