@@ -1,13 +1,13 @@
 # archiso-bcachefs-mainline
-A version of [vale981](https://github.com/vale981/archiso-bcachefs)'s repo to allow building bcachefs with a current stable kernel, with kernel optimizations from [nicman23](https://github.com/nicman23/bcachefs)'s PKGBUILD and bcachefs fixes by [eadwu](https://github.com/koverstreet/bcachefs/issues/54#issuecomment-578324042). I've also added a version with [ckoliva](https://github.com/ckolivas)'s MuQSS patches, the same as the linux-ck kernel. I recommend you go into the packages directory and build the packages before running make_iso.sh. You have to run chmod +x ./makeiso.sh before you can use make_iso.sh Here is the readme by vale981, modified for this repo:
+A version of [vale981](https://github.com/vale981/archiso-bcachefs)'s repo to allow building bcachefs with a variety of available kernels on AUR. I recommend you go into the packages directory and build the packages before running make_iso.sh. You have to run chmod +x ./makeiso.sh before you can use make_iso.sh Here is the readme by vale981, modified for this repo:
 
 # Archlinux Live with Bcachefs
 
 The scripts in this repo can be used to obtain an `Arch Linux`
 live/install/rescue ISO. This is realized through
 [Archiso](https://wiki.archlinux.org/index.php/Archiso) with some
-hacks to make it use the `linux-mainline-bcachefs` [from the
-AUR](https://aur.archlinux.org/packages/linux-mainline-bcachefs/).
+hacks to make it use the `linux-bcachefs-git` [from the
+AUR](https://aur.archlinux.org/packages/linux-bcachefs-git).
 
 The whole thing is currently in a *works for me* kind of state.
 
@@ -35,4 +35,4 @@ There are (at least) two (trivial) points to be considered however:
      mount it with `mount -t bcachefs`. In other words: You have to
      specify the fs type manually.
   2. When installing the base system with `pacstrap`, specify
-     `linux-mainline-bcachefs` instead of `linux`.
+     `linux-bcachefs-git` instead of `linux`.
